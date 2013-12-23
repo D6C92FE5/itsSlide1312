@@ -30,13 +30,13 @@ html
       mixin urllink(url)
         a(href=url, target="_blank")=url
 
-      +step("0", "0", "0", "4")#title
+      +step("1500", "0", "0", "2.5")#title
         h1 爱特程序知识补充
 
-      +step("0", "1400")#url
+      +step("0", "1800")#url
         h2 URL
 
-      +step("1500", "1400").slide#url-part
+      +step("1500", "1800").slide#url-part
         h3 URL 组成部分
         p.url-example <a>http://</a><a>www.example.com</a><a>/demo.aspx</a><a href="#/query-string">?id=1&amp;page=2</a><a href="#/fragment-identifier">#comment</a>
         ul
@@ -46,7 +46,7 @@ html
           li <span>?id=1&amp;page=2</span> 查询字符串(query string)
           li <span>#comment</span> (fragment identifier)
 
-      +step("3000", "1400").slide#query-string
+      +step("3000", "1800").slide#query-string
         h3 Query String
         p http://www.example.com/demo.aspx<span class="highlight">?id=1&amp;page=2</span>#comment
         p URL 中的一个子字符串，内容为 GET 模式的表单参数
@@ -71,7 +71,7 @@ html
           // 前台，页面将会重新载入
           window.location.search = "?ID=1"
 
-      +step("4500", "1400").slide#fragment-identifier
+      +step("4500", "1800").slide#fragment-identifier
         h3 Fragment Identifier
         p http://www.example.com/demo.aspx?id=1&amp;page=2<span class="highlight">#comment</span>
         p URL 中的一个子字符串，内容为当前页面中的某个标记的名字，以 “#” 字符为起点
@@ -94,17 +94,17 @@ html
           li 页面滚动到 id 为对应值的元素的位置
           li JS中使用，保存少量数据，页面刷新、复制 URL 到别的地方后仍然保持
 
-      +step("0", "2700")#id
+      +step("3000", "2900", "180")#id
         h2 ID
 
-      +step("1500", "2700").slide#ids
+      +step("1500", "2900", "180").slide#ids
         h3 控件的 *ID 属性
         ul
           li ID
           li ClientID
           li UniqueID
 
-      +step("3000", "2700").slide#id-example
+      +step("0", "2900", "180").slide#id-example
         h3 例子
         p ASP.NET 代码
         +code("html").
@@ -129,16 +129,16 @@ html
           // jQuery 选择 TextBox1
           $('#<%= TextBox1.ClientID %>')
 
-      +step("4500", "2700").slide#id-mode
+      +step("-1500", "2900", "180").slide#id-mode
         h3 ClientID 生成方式
         p ClientIDMode
         p 
           +urllink("http://msdn.microsoft.com/zh-cn/library/system.web.ui.control.clientidmode.aspx")
 
-      +step("0", "4000")#misc
+      +step("-3000", "4000")#misc
         h2 杂项
 
-      +step("1500", "4000").slide#use-link-more
+      +step("-1500", "4000").slide#use-link-more
         h3 更多地使用链接
         p 不需要提交表单的按钮，尽量使用链接代替，a 或者 HyperLink
         p 比如翻页、选项卡切换、注销时使用
@@ -151,7 +151,7 @@ html
           li 在大多数情况下载入速度不变或者更快，因为有些情况下可以减少请求次数
           li <em>对用户的刷新、在新标签页中打开、复制链接、添加书签、分享等行为更友好</em>
 
-      +step("3000", "4000").slide#null-coalescing
+      +step("0", "4000").slide#null-coalescing
         h3 null 合并运算符
         p null 合并运算符 “??”，用法为
         +code("cs").
@@ -166,7 +166,7 @@ html
           // 数据库中的可空值类型字段的处理
           var count = entity.Count ?? 0;
 
-      +step("4500", "4000").slide#avoid-static
+      +step("1500", "4000").slide#avoid-static
         h3 远离 static 变量
         p 不要在 ASP.NET 中使用 static 的变量
         p static 的变量的生存期是整个应用程序的运行期，内容是整个应用程序共享的
@@ -174,7 +174,7 @@ html
         p 如果想要保存整个应用程序共享的临时数据，随程序退出消失，应当使用 Application
         p 与 static 的变量不同，Application 是线程安全（可以在存在并发的时候使用）的
 
-      +step("6000", "4000").slide#eval-child
+      +step("3000", "4000").slide#eval-child
         h3 Eval 访问子属性
         p 数据绑定时 Eval 不但可以访问当前绑定对象的属性，属性的属性也是可以直接访问的
         p 比如
@@ -182,7 +182,7 @@ html
           &lt;%# Eval("User.Name") %&gt;
         p 这在配合外键与 O/RM 时尤为便利
 
-      +step("7500", "4000").slide#login-in-chinese
+      +step("4500", "4000").slide#login-in-chinese
         h3 “登录”还是“登陆”
         ul.indent
           li 谷歌 登录
@@ -196,7 +196,7 @@ html
           li 搜狐 登录
           li ...
 
-      +step("9000", "4000").slide#other
+      +step("6000", "4000").slide#other
         h3 其他
         p 这个展示页面是怎么做的？ 使用
           a(href="https://github.com/bartaz/impress.js/", target="_blank").
@@ -205,7 +205,7 @@ html
           a(href="http://code.google.com/p/google-code-prettify/", target="_blank").
             google-code-prettify
 
-      +step("3000", "1500", "0", "8")#overview
+      +step("1700", "2000", "0", "6")#overview
 
     script(src="assets/google-code-prettify/prettify.js")
     script.
