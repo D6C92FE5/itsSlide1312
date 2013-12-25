@@ -67,7 +67,7 @@ html
           Response.Redirect("demo.aspx?ID&#61;" + ID)
         +code("html").
           // 数据绑定时
-          &lt;a href='demo.aspx?ID=<span class="nocode">&lt;%# Eval("ID") &gt;</span>' runat="server" &gt;XXXX&lt;/a&gt;
+          &lt;a href='demo.aspx?ID=<span class="nocode">&lt;%# Eval("ID") %&gt;</span>' runat="server" &gt;XXXX&lt;/a&gt;
         +code("js").
           // 前台，页面将会重新载入
           window.location.search = "?ID=1"
@@ -86,7 +86,7 @@ html
         p 设置方法
         +code("cs").
           // 后台
-          Response.Redirect("demo.aspx?#comment")
+          Response.Redirect("demo.aspx#comment")
         +code("js").
           // 前台，与之前的 Query String 不同，不会引起页面的重新载入
           window.location.hash = "#comment"
